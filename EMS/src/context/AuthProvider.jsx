@@ -3,7 +3,6 @@ import { getLocalStorage } from "../utils/LocalStorage"
 
 export const AuthContext = createContext()
 
-
 const AuthProvider = ({children}) => {
 
     const [userData, setuserData] = useState(null)

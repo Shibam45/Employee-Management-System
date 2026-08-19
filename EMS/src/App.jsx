@@ -10,13 +10,13 @@ const App = () => {
 
   
   const [user, setuser] = useState(null)
-  const AuthData = useContext(AuthContext)
-  console.log(AuthData)
+  const authData = useContext(AuthContext)
+
 
   const handleLogin = (email,password) => {
       if(email == 'admin@me.com' && password == '123'){
         setuser('admin')
-      }else if(email == 'user@me.com' && password == '123'){
+      }else if(authData && authData.employees.find((e) => email == e.email && e.password == password)){
         setuser('employee')
       }else{
         alert("Invalid Credentials")
