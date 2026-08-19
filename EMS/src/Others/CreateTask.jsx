@@ -1,7 +1,7 @@
 
 const CreateTask = () => {
   return (
-    <div className="p-5 bg-[#1C1C1C] mt-7 rounded">
+    <div className="p-5 bg-[#1C1C1C] mt-6 rounded">
             <form className="flex flex-wrap items-start justify-between w-full">
 
                 <div className="w-1/2">
@@ -26,7 +26,7 @@ const CreateTask = () => {
                 <div className="w-2/5 flex flex-col items-start">
                     <h3 className="text-sm text-orange-200 mb-0.5">Description</h3>
                     <textarea className="text-sm py-2 px-4 w-full h-40 rounded outline-none bg-transparent border text-white border-gray-500 mb-4" name="" id=""/>
-                    <button className="px-5 text-sm mt-4 w-full rounded hover:bg-emerald-600 py-3 active:scale-95 bg-emerald-400">Create Task</button>
+                    <button className="px-5 text-sm mt-4 w-full rounded hover:bg-[#607d33] py-3 active:scale-95 bg-[#8DB355]">Create Task</button>
                 </div>
 
             </form>
