@@ -4,7 +4,7 @@ import Header from "../../Others/Header"
 
 const AdminDashboard = () => {
   return (
-    <div className="h-screen w-full p-7 bg-black">
+    <div className="h-full w-full p-7 bg-black">
         <Header />
         <CreateTask />
         <AllTask />
