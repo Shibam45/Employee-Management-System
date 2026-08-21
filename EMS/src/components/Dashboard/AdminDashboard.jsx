@@ -4,10 +4,12 @@ import Header from "../../Others/Header"
 
 const AdminDashboard = (props) => {
   return (
-    <div className="h-full w-full p-7 bg-black">
-        <Header changeUser={props.changeUser}/>
-        <CreateTask />
-        <AllTask />
+    <div className="min-h-screen w-full p-6 sm:p-10 bg-[#090d16] text-white selection:bg-emerald-500 selection:text-white">
+        <div className="max-w-7xl mx-auto">
+          <Header changeUser={props.changeUser} data={props.data}/>
+          <CreateTask />
+          <AllTask />
+        </div>
     </div>
   )
 }

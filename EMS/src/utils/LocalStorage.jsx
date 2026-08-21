@@ -77,10 +77,10 @@ const employees = [
     taskNumber: 5,
 
     taskCounts: {
-      active: 3,
-      newTask: 2,
-      completed: 1,
-      failed: 1
+      active: 4,
+      newTask: 1,
+      completed: 3,
+      failed: 0
     },
 
     tasks: [
@@ -146,10 +146,10 @@ const employees = [
     taskNumber: 5,
 
     taskCounts: {
-      active: 3,
+      active: 6,
       newTask: 2,
-      completed: 2,
-      failed: 0
+      completed: 4,
+      failed: 1
     },
 
     tasks: [
@@ -215,10 +215,10 @@ const employees = [
     taskNumber: 5,
 
     taskCounts: {
-      active: 3,
+      active: 1,
       newTask: 2,
-      completed: 1,
-      failed: 1
+      completed: 0,
+      failed: 2
     },
 
     tasks: [
@@ -284,10 +284,10 @@ const employees = [
     taskNumber: 5,
 
     taskCounts: {
-      active: 3,
-      newTask: 2,
+      active: 4,
+      newTask: 1,
       completed: 2,
-      failed: 0
+      failed: 3
     },
 
     tasks: [
