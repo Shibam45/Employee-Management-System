@@ -13,12 +13,12 @@ const Login = ({handleLogin}) => {
 
   return (
     <div className="relative flex h-screen w-screen items-center justify-center bg-[#090d16] overflow-hidden">
-        {/* Background Ambient Glows */}
+      
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-emerald-500/20 rounded-full blur-[128px] pointer-events-none"></div>
         <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-indigo-500/20 rounded-full blur-[128px] pointer-events-none"></div>
 
         <div className="relative z-10 w-full max-w-md p-8 sm:p-10 mx-4 rounded-3xl glass-card border border-white/10 shadow-2xl backdrop-blur-xl">
-            {/* Header Badge & Title */}
+          
             <div className="text-center mb-8">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -61,7 +61,7 @@ const Login = ({handleLogin}) => {
                 </button>
             </form>
 
-            {/* Quick Demo Info */}
+           
             <div className="mt-8 pt-6 border-t border-white/10 text-center text-xs text-gray-400">
                 <p className="font-semibold text-gray-300 mb-1">Demo Credentials:</p>
                 <div className="flex justify-center gap-4 text-gray-400 mt-2">

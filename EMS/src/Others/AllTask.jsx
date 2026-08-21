@@ -2,8 +2,8 @@ import { useContext } from "react"
 import { AuthContext } from "../context/AuthProvider"
 
 const AllTask = () => {
-  const authData = useContext(AuthContext)
-  const employees = authData?.employees || []
+  const [userData] = useContext(AuthContext) || []
+  const employees = userData?.employees || []
 
   return (
     <div className="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl backdrop-blur-xl">

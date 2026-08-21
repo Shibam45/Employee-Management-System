@@ -5,7 +5,7 @@ const TaskListNumber = ({data}) => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
-      {/* New Task */}
+      
       <div className="glass-card glass-card-hover rounded-2xl p-6 relative overflow-hidden group border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-slate-900/40 to-slate-900/60">
         <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all"></div>
         <div className="flex items-center justify-between mb-4">
@@ -20,7 +20,7 @@ const TaskListNumber = ({data}) => {
         <p className="text-xs text-gray-400 mt-1">Assigned recently</p>
       </div>
 
-      {/* Completed Task */}
+      
       <div className="glass-card glass-card-hover rounded-2xl p-6 relative overflow-hidden group border border-blue-500/20 bg-gradient-to-br from-blue-500/10 via-slate-900/40 to-slate-900/60">
         <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all"></div>
         <div className="flex items-center justify-between mb-4">
@@ -35,7 +35,7 @@ const TaskListNumber = ({data}) => {
         <p className="text-xs text-gray-400 mt-1">Finished successfully</p>
       </div>
 
-      {/* Active Task */}
+      
       <div className="glass-card glass-card-hover rounded-2xl p-6 relative overflow-hidden group border border-amber-500/20 bg-gradient-to-br from-amber-500/10 via-slate-900/40 to-slate-900/60">
         <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
         <div className="flex items-center justify-between mb-4">
@@ -50,7 +50,7 @@ const TaskListNumber = ({data}) => {
         <p className="text-xs text-gray-400 mt-1">Currently active</p>
       </div>
 
-      {/* Failed Task */}
+      
       <div className="glass-card glass-card-hover rounded-2xl p-6 relative overflow-hidden group border border-rose-500/20 bg-gradient-to-br from-rose-500/10 via-slate-900/40 to-slate-900/60">
         <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/10 rounded-full blur-xl group-hover:bg-rose-500/20 transition-all"></div>
         <div className="flex items-center justify-between mb-4">

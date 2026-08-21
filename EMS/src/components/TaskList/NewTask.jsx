@@ -1,5 +1,37 @@
 
+import { useContext } from "react"
+import { AuthContext } from "../../context/AuthProvider"
+
 const NewTask = ({data}) => {
+  const [userData, setuserData] = useContext(AuthContext) || []
+
+  const handleAccept = () => {
+    const employees = JSON.parse(localStorage.getItem('employees')) || []
+    const loggedInUserStr = localStorage.getItem('loggedInUser')
+    if (!loggedInUserStr) return
+
+    const loggedInUser = JSON.parse(loggedInUserStr)
+
+    employees.forEach(emp => {
+      if (emp.id === loggedInUser.data?.id || emp.email === loggedInUser.data?.email) {
+        emp.tasks.forEach(t => {
+          if (t.taskTitle === data.taskTitle && t.taskDate === data.taskDate) {
+            t.newTask = false
+            t.active = true
+          }
+        })
+        if (emp.taskCounts.newTask > 0) emp.taskCounts.newTask -= 1
+        emp.taskCounts.active = (emp.taskCounts.active || 0) + 1
+      }
+    })
+
+    localStorage.setItem('employees', JSON.stringify(employees))
+    const admin = JSON.parse(localStorage.getItem('admin')) || []
+    if (setuserData) {
+      setuserData({ employees, admin })
+    }
+  }
+
   return (
     <div className="shrink-0 w-80 sm:w-84 glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between border border-emerald-500/20 bg-gradient-to-b from-emerald-500/10 via-slate-900/50 to-slate-900/80 shadow-xl">
       <div>
@@ -20,7 +52,10 @@ const NewTask = ({data}) => {
       </div>
 
       <div className="mt-6 pt-4 border-t border-white/10">
-        <button className="w-full bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-semibold py-2.5 px-4 rounded-xl text-xs transition-all active:scale-95 flex items-center justify-center gap-2">
+        <button 
+          onClick={handleAccept}
+          className="w-full bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-semibold py-2.5 px-4 rounded-xl text-xs transition-all active:scale-95 flex items-center justify-center gap-2"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
           </svg>

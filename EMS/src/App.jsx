@@ -7,32 +7,45 @@ import { AuthContext } from "./context/AuthProvider"
 
 
 const App = () => {
-
-  
   const [user, setuser] = useState(null)
   const [loggedInUserData, setloggedInUserData] = useState(null)
-  const authData = useContext(AuthContext)
+  const [userData, setuserData] = useContext(AuthContext) || []
 
   useEffect(() => {
-       const loggedInUser = localStorage.getItem("loggedInUser")
-       if(loggedInUser){
-         const userData = JSON.parse(loggedInUser)
-         setuser(userData.role)
-         setloggedInUserData(userData.data)
-       }
-  }, [authData])
-  
+    const loggedInUser = localStorage.getItem("loggedInUser")
+    if(loggedInUser){
+      try {
+        const parsedUser = JSON.parse(loggedInUser)
+        setuser(parsedUser.role)
+        if (parsedUser.role === 'employee' && userData?.employees) {
+          const currentEmployee = userData.employees.find(e => e.id === parsedUser.data?.id || e.email === parsedUser.data?.email)
+          if (currentEmployee) {
+            setloggedInUserData(currentEmployee)
+          } else {
+            setloggedInUserData(parsedUser.data)
+          }
+        } else {
+          setloggedInUserData(parsedUser.data)
+        }
+      } catch(err) {
+        console.error(err)
+      }
+    }
+  }, [userData])
 
   const handleLogin = (email,password) => {
       if(email == 'admin@me.com' && password == '123'){
         setuser('admin')
-        localStorage.setItem('loggedInUser',JSON.stringify({role:'admin'}))
-      }else if(authData){
-        const employee = authData.employees.find((e) => email == e.email && e.password == password)
+        setloggedInUserData({ firstName: 'Shibam' })
+        localStorage.setItem('loggedInUser',JSON.stringify({role:'admin', data: { firstName: 'Shibam' }}))
+      }else if(userData && userData.employees){
+        const employee = userData.employees.find((e) => email == e.email && e.password == password)
         if(employee){
           setuser('employee')
           setloggedInUserData(employee)
           localStorage.setItem('loggedInUser',JSON.stringify({role:'employee',data:employee }))
+        }else{
+          alert("Invalid Credentials")
         }
       }else{
         alert("Invalid Credentials")

@@ -1,6 +1,9 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { AuthContext } from "../context/AuthProvider"
 
 const CreateTask = () => {
+    const [userData, setuserData] = useContext(AuthContext) || []
+
     const [taskTitle, settaskTitle] = useState('')
     const [taskDescription, settaskDescription] = useState('')
     const [taskDate, settaskDate] = useState('')
@@ -34,6 +37,10 @@ const CreateTask = () => {
 
         if (assigned) {
             localStorage.setItem('employees', JSON.stringify(data))
+            const adminData = JSON.parse(localStorage.getItem('admin')) || []
+            if (setuserData) {
+              setuserData({ employees: data, admin: adminData })
+            }
             alert(`Task assigned to ${assignTo} successfully!`)
             setassignTo('')
             setcategory('')
