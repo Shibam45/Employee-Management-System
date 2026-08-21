@@ -1,16 +1,35 @@
-# React + Vite
+# 🚀 Employee Management System (EMS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, glassmorphic Employee Management System built with React, Vite, Tailwind CSS v4, and Context API. This application allows administrators to assign tasks to employees in real-time, track team performance, and enable employees to manage their assigned tasks with interactive progress states.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+### 👑 Admin Control Panel
+- **Assign New Tasks**: Create and publish tasks for specific team members with category tags, due dates, titles, and detailed descriptions.
+- **Real-Time Team Matrix**: Live overview of task distribution (New, Active, Completed, Failed) for all employees in a clean data grid.
+- **Persistent Storage**: Real-time state synchronization with localStorage and React Context API.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 👤 Employee Dashboard
+- **Personalized Header**: Displays the logged-in user's name, role badge ("Employee Dashboard"), and initial avatar.
+- **Task Summary Metrics**: 4 dynamic metric widgets showing real-time task counts (New Tasks, Completed, In Progress, Failed).
+- **Interactive Task List**:
+  - **New Tasks**: Accept new tasks into the active pipeline.
+  - **Active Tasks**: Mark tasks as Completed or Failed.
+  - **Completed & Failed Tasks**: Read-only history of completed or failed items.
 
-## Expanding the ESLint configuration
+### 🎨 Next-Level UI / UX Design
+- **Glassmorphism Aesthetic**: Backdrop blur cards, dark background glows, and subtle borders.
+- **Modern Typography**: Powered by Google Fonts (Outfit for bold headings and Inter for body text).
+- **Responsive Layout**: Designed to look great on desktop, tablet, and mobile screens.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+- **Frontend**: React (JSX, Hooks, Context API)
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS v4 + Vanilla CSS Utilities
+- **State & Persistence**: React Context API + LocalStorage
+- **Typography**: Google Fonts (Outfit & Inter)
+
